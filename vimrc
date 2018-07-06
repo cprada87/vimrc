@@ -2,6 +2,13 @@
 " Version: 20180615
 " Author: Christian Prada <cprada87@gmail.com> - http://github.com/cprada87
 " Main Source: Juanmi Taboada <juanmi@juanmitaboada.com> - http://www.juanmitaboada.com
+
+" 1) Copy vimrc to your $HOME folder as:  ~/.vim/vimrc
+" 2) Make sure your system is ready for this (debian/ubuntu):
+"    #sudo apt-get install ncurses-term git pyflakes3 pylama pymetrics python3-mccabe python3-flake8 bandit python3-bandit
+" 3) #cd ~ ; echo 'alias vim="TERM=xterm+256color vim"' >> ~/.bashrc
+
+
 set termguicolors
 set encoding=utf-8
 
@@ -73,7 +80,7 @@ endif
 " ============================================================================
 " no vi-compatible
 set nocompatible
- colorscheme base16-classic-dark
+ colorscheme base16-monokai
 
 " === CHEATSHEET ===
 "
