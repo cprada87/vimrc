@@ -48,14 +48,14 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
-Plug 'szw/vim-tags'
+"Plug 'szw/vim-tags'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
 Plug 'djmoch/vim-makejob'
 Plug 'tpope/vim-commentary'
 Plug 'leafgarland/typescript-vim'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/xoria256.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-dispatch'
@@ -166,7 +166,7 @@ set expandtab
 set list
 set lcs=extends:$,tab:/.,eol:$
 set showmatch
-ab usetab :set noet ci pi sts=0 sw=4 ts=4 " Show tab character
+"ab usetab :set noet ci pi sts=0 sw=4 ts=4 " Show tab character
 
 " Remember last position
 if has("autocmd")
@@ -181,7 +181,7 @@ let g:deoplete#enable_at_startup = 1
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
-" let g:javascript_plugin_flow = 1
+let g:javascript_plugin_flow = 1
 
 " default folding settings
 " set foldmethod=marker   " Using markers: {{{1  ...  }}}1
@@ -197,16 +197,16 @@ map <F2> :NERDTreeToggle<CR>
 imap <F2> <Esc>:NERDTreeToggle<CR>
 
 " Ultisnipts controls
-let g:UltiSnipsExpandTrigger="<F4>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsExpandTrigger="<F4>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " ctags controls
 " for ctags to work you must make a "tags" file inside some of your projects
 " folder from the list of vim-tags plugin: [".git", ".hg", ".svn", ".bzr", "_darcs", "CVS"]
-let g:vim_tags_use_language_field = 1
-map <cr> <c-]>
-map <bs> <c-t>
+"let g:vim_tags_use_language_field = 1
+"map <cr> <c-]>
+"map <bs> <c-t>
 
 " Buffer management management
 map  <A-Up> :BufExplorer<CR>
@@ -239,7 +239,7 @@ vnoremap > >gv
 nmap <F3> :mks! .session.vim<CR>
 
 " YouCompleteMe
-nmap <C-Space> (g:ycm_key_invoke_completion)
+ nmap <C-Space> (g:ycm_key_invoke_completion)
 
 " Jedi-Vim
 let g:synaptic_python_flake8_args='--ignore=F821,E302,E501'
@@ -258,9 +258,9 @@ let g:ale_python_pycodestyle_options = '--ignore=E501,E302'
 nmap <silent> <C-S-Left> <Plug>(ale_previous_wrap) nmap <silent> <C-S-Right> <Plug>(ale_next_wrap)
 
 " Show messages in a different manner
-" let g:ale_echo_msg_error_str = 'E'
-" let g:ale_echo_msg_warning_str = 'W'
-" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+ let g:ale_echo_msg_error_str = 'E'
+ let g:ale_echo_msg_warning_str = 'W'
+ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " Add support for prospector
 autocmd FileType python setlocal makeprg=prospector\ -8\ -o\ pylint\ % errorformat=%f:%l:\ %m
