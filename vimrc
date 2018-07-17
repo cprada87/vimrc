@@ -55,7 +55,7 @@ Plug 'SirVer/ultisnips'
 Plug 'djmoch/vim-makejob'
 Plug 'tpope/vim-commentary'
 Plug 'leafgarland/typescript-vim'
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/xoria256.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-dispatch'
@@ -80,7 +80,7 @@ endif
 " ============================================================================
 " no vi-compatible
 set nocompatible
- colorscheme base16-monokai
+ colorscheme base16-irblack
 
 " === CHEATSHEET ===
 "
@@ -197,9 +197,9 @@ map <F2> :NERDTreeToggle<CR>
 imap <F2> <Esc>:NERDTreeToggle<CR>
 
 " Ultisnipts controls
-"let g:UltiSnipsExpandTrigger="<F4>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<F4>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " ctags controls
 " for ctags to work you must make a "tags" file inside some of your projects
@@ -209,14 +209,14 @@ imap <F2> <Esc>:NERDTreeToggle<CR>
 "map <bs> <c-t>
 
 " Buffer management management
-map  <A-Up> :BufExplorer<CR>
-map! <A-Up> <Esc>:BufExplorer<CR>
-map  <A-Right> :bnext<CR>
-map! <A-Right> <Esc>:bnext<CR>
-map  <A-Left> :bprevious<CR>
-map! <A-Left> <Esc>:bprevious<CR>
-map  <A-Down> :bd<CR>
-map! <A-Down> <Esc>:bd<CR>
+" map  <A-Up> :BufExplorer<CR>
+" map! <A-Up> <Esc>:BufExplorer<CR>
+" map  <A-Right> :bnext<CR>
+" map! <A-Right> <Esc>:bnext<CR>
+" map  <A-Left> :bprevious<CR>
+" map! <A-Left> <Esc>:bprevious<CR>
+" map  <A-Down> :bd<CR>
+" map! <A-Down> <Esc>:bd<CR>
 
 " move lines up and down from grendel-arsenal.googlecode.com
 nnoremap <C-Down> :m+<CR>==
@@ -235,6 +235,18 @@ vnoremap <C-Right> >gv
 vnoremap < <gv
 vnoremap > >gv
 
+" Create new tabs and move 
+map  <A-Right> :tabn<CR>
+imap <A-Right> <Esc>:tabn<CR>
+map  <A-Left> :tabp<CR>
+imap <A-Left> <Esc>:tabp<CR>
+map  <A-Up> :tabnew<CR>
+imap <A-Up> <Esc>:tabnew<CR>
+map  <A-Down> :tabn<CR>
+imap <A-Down> <Esc>:tabn<CR>
+" map  <A-Down> :q!<CR>
+" imap <A-Down> <Esc>:q!<CR>
+
 " Save session
 nmap <F3> :mks! .session.vim<CR>
 
@@ -245,7 +257,7 @@ nmap <F3> :mks! .session.vim<CR>
 let g:synaptic_python_flake8_args='--ignore=F821,E302,E501'
 let g:jedi#goto_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "D"
+let g:jedi#goto_definitions_command = "Q"
 let g:jedi#documentation_command = "<C-K>"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
@@ -276,7 +288,6 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-" let g:airline_left_sep = '»'
 " let g:airline_left_sep = '▶'
 " let g:airline_right_sep = '«'
 " let g:airline_right_sep = '◀'
