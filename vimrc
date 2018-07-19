@@ -137,8 +137,6 @@ set nocompatible
 " To search for files with the word "colors" use:
 " <Ctrl+P> colors
 
-set completeopt=menuone
-set tabstop=4
 set tw=0                            " Don't wrap lines at 80 columns
 set linebreak                       " Don't wrap words by default
 set textwidth=0                     " Don't wrap lines by default 
@@ -149,17 +147,19 @@ set showcmd                         " Show (partial) command in status line.
 set showmatch                       " Show matching brackets.
 set incsearch                       " Incremental search
 set nu                              " Number of lines
+set mouse=r                         " Enable mouse usage (all modes)
+set autowrite                       " Automatic writing
+set autoread                        " Reload file if changed
+set ignorecase                      " Do case insensitive matching
+set wildmode=list:longest           " Autocompletion commands like shell
+set laststatus=2
+set completeopt=menuone
+set tabstop=4
 set cursorline
 set cursorcolumn
 set shiftwidth=4
 set hlsearch
 set hidden
-set mouse=r                         " Enable mouse usage (all modes)
-set autowrite                       " Automatic writing
-set autoread                        " Reload file if changed
-set laststatus=2
-set ignorecase                      " Do case insensitive matching
-set wildmode=list:longest           " Autocompletion commands like shell
 
 " Show tabs and end of line
 set softtabstop=4
@@ -204,6 +204,14 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " ctags controls
+
+" Source: https://andrew.stwrt.ca/posts/vim-ctags/
+" To use ctags, you need install ctags package on your Linux distribution: sudo apt-get/dnf/pacman install/-Sy ctags
+" And then execute on your root workspace: ctags -R -f .git/tags .
+" The previous command, create a new file with all the tags, this file is hidden inside of .git folder
+" Finally if you press <Enter> on any class, that takes you to description.
+" Press <Return> to go back again.
+
 " for ctags to work you must make a "tags" file inside some of your projects
 " folder from the list of vim-tags plugin: [".git", ".hg", ".svn", ".bzr", "_darcs", "CVS"]
 let g:vim_tags_use_language_field = 1
