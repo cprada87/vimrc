@@ -240,6 +240,9 @@ imap <A-Down> <Esc>:tabn<CR>
 map  <A-Down> :q!<CR>
 " imap <A-Down> <Esc>:q!<CR>
 
+" Open terminal inside VIM
+map  <F12> :terminal<CR>
+
 " move lines up and down from grendel-arsenal.googlecode.com
 nnoremap <C-Down> :m+<CR>==
 nnoremap <C-Up> :m-2<CR>==
@@ -290,7 +293,6 @@ autocmd FileType python setlocal makeprg=prospector\ -8\ -o\ pylint\ % errorform
 let g:makejob_hide_preview_window = 1
 map  <C-x> :MakeJob<CR>:copen<CR><C-w><Up>
 map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
-
 
 " Airline 
 
