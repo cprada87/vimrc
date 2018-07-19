@@ -80,7 +80,7 @@ endif
 " ============================================================================
 " no vi-compatible
 set nocompatible
- colorscheme base16-irblack
+ colorscheme base16-onedark
 
 " === CHEATSHEET ===
 "
@@ -244,7 +244,7 @@ map  <A-Up> :tabnew<CR>
 imap <A-Up> <Esc>:tabnew<CR>
 map  <A-Down> :tabn<CR>
 imap <A-Down> <Esc>:tabn<CR>
-" map  <A-Down> :q!<CR>
+ map  <A-Down> :q!<CR>
 " imap <A-Down> <Esc>:q!<CR>
 
 " Save session
@@ -257,13 +257,20 @@ nmap <F3> :mks! .session.vim<CR>
 let g:synaptic_python_flake8_args='--ignore=F821,E302,E501'
 let g:jedi#goto_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "Q"
+let g:jedi#goto_definitions_command = ""
 let g:jedi#documentation_command = "<C-K>"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 
 " ALE configuration (Asynchronous Linter Engine)
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_mode_map = { 'mode': 'active',
+\ 'active_filetypes': [],
+\ 'passive_filetypes': [] }
+let g:ale_linters = {'c': ['gcc'], 'lua': ['luac'], 'cpp': ['gcc'], 'g++':['gcc'], 'python': ['flake8', 'pylint']}
+let g:ale_c_gcc_executable = '/usr/bin/gcc'
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_python_pycodestyle_options = '--ignore=E501,E302'
