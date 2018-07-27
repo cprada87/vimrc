@@ -80,7 +80,7 @@ endif
 " ============================================================================
 " no vi-compatible
 set nocompatible
- colorscheme base16-google-dark
+ colorscheme base16-summerfruit-dark
 
 " === CHEATSHEET ===
 "
@@ -241,7 +241,7 @@ map  <A-Down> :q!<CR>
 " imap <A-Down> <Esc>:q!<CR>
 
 " Open terminal inside VIM
-map  <F12> :terminal<CR>
+" map  <F12> :terminal<CR>
 
 " move lines up and down from grendel-arsenal.googlecode.com
 nnoremap <C-Down> :m+<CR>==
@@ -297,7 +297,7 @@ map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
 " Airline 
 
 let g:airline_powerline_fonts = 0
-let g:airline_theme = 'base16_google'
+let g:airline_theme = 'base16_summerfruit'
 let g:airline#extensions#whitespace#enabled = 0
 
 " Powerline
