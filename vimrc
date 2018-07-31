@@ -242,7 +242,7 @@ map  <A-Down> :q!<CR>
 " imap <A-Down> <Esc>:q!<CR>
 
 " Open terminal inside VIM
-map  <F12> :terminal<CR>
+" map  <F12> :terminal<CR>
 
 " move lines up and down from grendel-arsenal.googlecode.com
 nnoremap <C-Down> :m+<CR>==
