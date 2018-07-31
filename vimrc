@@ -60,6 +60,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-dispatch'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'powerline/powerline'
 
@@ -80,7 +81,7 @@ endif
 " ============================================================================
 " no vi-compatible
 set nocompatible
- colorscheme base16-google-dark
+ colorscheme base16-summerfruit-dark
 
 " === CHEATSHEET ===
 "
@@ -296,11 +297,17 @@ map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
 
 " Airline 
 
-let g:airline_powerline_fonts = 0
-let g:airline_theme = 'base16_google'
+let g:airline_powerline_fonts = 1 
+let g:airline_theme = 'base16_summerfruit'
 let g:airline#extensions#whitespace#enabled = 0
+" Airline & git
+let g:airline#extensions#branch#enabled = 1
 
-" Powerline
+" Add vim-fugitive plug to see git on airline
+" This plug have more commands to manage git inside vim :)
+" Source: https://github.com/tpope/vim-fugitive
+
+" Powerline (old plug)
 
 let g:powerline_pycmd = "py3"
 if !exists('g:airline_symbols')
@@ -308,18 +315,18 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
- let g:airline_left_sep = '»'
- let g:airline_left_sep = '▶'
- let g:airline_right_sep = '«'
- let g:airline_right_sep = '◀'
- let g:airline_symbols.linenr = '␊'
- let g:airline_symbols.linenr = '␤'
- let g:airline_symbols.linenr = '¶'
- let g:airline_symbols.branch = '⎇'
- let g:airline_symbols.paste = 'ρ'
- let g:airline_symbols.paste = 'Þ'
- let g:airline_symbols.paste = '∥'
- let g:airline_symbols.whitespace = 'Ξ'
+ " let g:airline_left_sep = '»'
+ " let g:airline_left_sep = '▶'
+ " let g:airline_right_sep = '«'
+ " let g:airline_right_sep = '◀'
+ " let g:airline_symbols.linenr = '␊'
+ " let g:airline_symbols.linenr = '␤'
+ " let g:airline_symbols.linenr = '¶'
+ " let g:airline_symbols.branch = '⎇'
+ " let g:airline_symbols.paste = 'ρ'
+ " let g:airline_symbols.paste = 'Þ'
+ " let g:airline_symbols.paste = '∥'
+ " let g:airline_symbols.whitespace = 'Ξ'
 
 " airline symbols
  let g:airline_left_sep = ''
@@ -329,3 +336,16 @@ endif
  let g:airline_symbols.branch = ''
  let g:airline_symbols.readonly = ''
  let g:airline_symbols.linenr = ''
+ let g:airline_symbols.linenr = '¶'
+ let g:airline_symbols.paste = 'ρ'
+ let g:airline_symbols.paste = 'Þ'
+ let g:airline_symbols.paste = '∥'
+ let g:airline_symbols.whitespace = 'Ξ'
+
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.branch = '⎇'
