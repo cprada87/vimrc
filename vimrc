@@ -62,6 +62,8 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'fenetikm/falcon'
+Plug 'liuchengxu/space-vim-dark'
 "Plug 'powerline/powerline'
 
 if has('python')
@@ -72,7 +74,6 @@ call plug#end()
 
 " ============================================================================
 " Install plugins the first time vim runs
-
 if vim_plug_just_installed
     echo "Installing Bundles, please ignore key map error messages"
     :PlugInstall
@@ -81,8 +82,14 @@ endif
 " ============================================================================
 " no vi-compatible
 set nocompatible
- colorscheme base16-summerfruit-dark
-
+set termguicolors
+let g:space_vim_dark_background = 234
+" colorscheme base16-summerfruit-dark
+colorscheme space-vim-dark
+hi Normal     ctermbg=NONE guibg=NONE
+hi LineNr     ctermbg=NONE guibg=NONE
+hi SignColumn ctermbg=NONE guibg=NONE
+hi LineNr ctermbg=NONE guibg=NONE
 " === CHEATSHEET ===
 "
 " *                 Search forward word under the cursor    [ vim ]
@@ -298,7 +305,7 @@ map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
 " Airline 
 
 let g:airline_powerline_fonts = 1 
-let g:airline_theme = 'base16_summerfruit'
+let g:airline_theme = 'violet'
 let g:airline#extensions#whitespace#enabled = 0
 " Airline & git
 let g:airline#extensions#branch#enabled = 1
