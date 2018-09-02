@@ -9,7 +9,7 @@
 " 3) #cd ~ ; echo 'alias vim="TERM=xterm+256color vim"' >> ~/.bashrc
 
 
-set termguicolors
+"set termguicolors
 set encoding=utf-8
 
 let vim_plug_just_installed = 0
@@ -59,12 +59,12 @@ Plug 'vim-scripts/xoria256.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-dispatch'
 Plug 'Valloric/YouCompleteMe'
- Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'fenetikm/falcon'
 Plug 'liuchengxu/space-vim-dark'
-"Plug 'powerline/powerline'
+Plug 'powerline/powerline'
 
 if has('python')
     " YAPF formatter for Python
@@ -82,14 +82,12 @@ endif
 " ============================================================================
 " no vi-compatible
 set nocompatible
-set termguicolors
-let g:space_vim_dark_background = 234
- colorscheme base16-onedark
+" colorscheme base16-onedark
 " colorscheme space-vim-dark
-hi Normal     ctermbg=NONE guibg=NONE
-hi LineNr     ctermbg=NONE guibg=NONE
-hi SignColumn ctermbg=NONE guibg=NONE
-hi LineNr ctermbg=NONE guibg=NONE
+
+" ============================================================================
+
+
 " === CHEATSHEET ===
 "
 " *                 Search forward word under the cursor    [ vim ]
@@ -286,10 +284,10 @@ let g:jedi#rename_command = "<leader>r"
 
 " ALE configuration (Asynchronous Linter Engine)
 
-let g:ale_sign_warning = '!!'
+"let g:ale_sign_warning = '!!'
 
-highlight ALEError ctermfg=9 ctermbg=15 guifg=#C30500 
-highlight ALEWarning ctermfg=11 ctermbg=15 guifg=#ED6237
+"highlight ALEError ctermfg=9 ctermbg=15 guifg=#C30500 
+"highlight ALEWarning ctermfg=11 ctermbg=15 guifg=#ED6237
 
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
@@ -308,17 +306,17 @@ map  <C-x> :MakeJob<CR>:copen<CR><C-w><Up>
 map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
 
 " python3 from powerline.vim import setup as powerline_setup
-" python3 powerline_setup()
-" python3 del powerline_setup
-" set laststatus=2 " Always display the statusline in all windows
-" set showtabline=2 " Always display the tabline, even if there is only one tab
-" set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-" set t_Co=256
+ " python3 powerline_setup()
+ " python3 del powerline_setup
+ " set laststatus=2 " Always display the statusline in all windows
+ " set showtabline=2 " Always display the tabline, even if there is only one tab
+ " set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+ " set t_Co=256
 
 " Airline 
 
 let g:airline_powerline_fonts = 1 
-let g:airline_theme = 'onedark'
+"let g:airline_theme = 'onedark'
 let g:airline#extensions#whitespace#enabled = 0
 " Airline & git
 let g:airline#extensions#branch#enabled = 1
@@ -335,37 +333,33 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
- " let g:airline_left_sep = '»'
- " let g:airline_left_sep = '▶'
- " let g:airline_right_sep = '«'
- " let g:airline_right_sep = '◀'
- " let g:airline_symbols.linenr = '␊'
- " let g:airline_symbols.linenr = '␤'
- " let g:airline_symbols.linenr = '¶'
- " let g:airline_symbols.branch = '⎇'
- " let g:airline_symbols.paste = 'ρ'
- " let g:airline_symbols.paste = 'Þ'
- " let g:airline_symbols.paste = '∥'
- " let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
- let g:airline_left_sep = ''
- let g:airline_left_alt_sep = ''
- let g:airline_right_sep = ''
- let g:airline_right_alt_sep = ''
- let g:airline_symbols.branch = ''
- let g:airline_symbols.readonly = ''
- let g:airline_symbols.linenr = ''
+ let g:airline_symbols.linenr = '␊'
+ let g:airline_symbols.linenr = '␤'
  let g:airline_symbols.linenr = '¶'
+ let g:airline_symbols.branch = '⎇'
  let g:airline_symbols.paste = 'ρ'
  let g:airline_symbols.paste = 'Þ'
  let g:airline_symbols.paste = '∥'
  let g:airline_symbols.whitespace = 'Ξ'
 
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
+" airline symbols
+" let g:airline_left_sep = ''
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep = ''
+" let g:airline_right_alt_sep = ''
+" let g:airline_symbols.branch = ''
+" let g:airline_symbols.readonly = ''
+" let g:airline_symbols.linenr = ''
+" let g:airline_symbols.linenr = '¶'
+" let g:airline_symbols.paste = 'ρ'
+" let g:airline_symbols.paste = 'Þ'
+" let g:airline_symbols.paste = '∥'
+" let g:airline_symbols.whitespace = 'Ξ'
+
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
 " let g:airline_symbols.linenr = '␊'
 " let g:airline_symbols.linenr = '␤'
 " let g:airline_symbols.branch = '⎇'
