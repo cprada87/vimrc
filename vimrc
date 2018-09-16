@@ -9,7 +9,7 @@
 " 3) #cd ~ ; echo 'alias vim="TERM=xterm+256color vim"' >> ~/.bashrc
 
 
-"set termguicolors
+set termguicolors
 set encoding=utf-8
 
 let vim_plug_just_installed = 0
@@ -80,12 +80,6 @@ if vim_plug_just_installed
 endif
 
 " ============================================================================
-" no vi-compatible
-set nocompatible
-" colorscheme base16-onedark
-" colorscheme space-vim-dark
-
-" ============================================================================
 
 
 " === CHEATSHEET ===
@@ -143,6 +137,8 @@ set nocompatible
 " To search for files with the word "colors" use:
 " <Ctrl+P> colors
 
+" ============================================================================
+set nocompatible
 set tw=0                            " Don't wrap lines at 80 columns
 set linebreak                       " Don't wrap words by default
 set textwidth=0                     " Don't wrap lines by default 
@@ -246,7 +242,7 @@ map  <A-Down> :q!<CR>
 " imap <A-Down> <Esc>:q!<CR>
 
 " Open terminal inside VIM
-" map  <F12> :terminal<CR>
+map  <F12> :terminal<CR>
 
 " move lines up and down from grendel-arsenal.googlecode.com
 nnoremap <C-Down> :m+<CR>==
@@ -341,25 +337,7 @@ endif
  let g:airline_symbols.paste = 'Þ'
  let g:airline_symbols.paste = '∥'
  let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
-" let g:airline_left_sep = ''
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep = ''
-" let g:airline_right_alt_sep = ''
-" let g:airline_symbols.branch = ''
-" let g:airline_symbols.readonly = ''
-" let g:airline_symbols.linenr = ''
-" let g:airline_symbols.linenr = '¶'
-" let g:airline_symbols.paste = 'ρ'
-" let g:airline_symbols.paste = 'Þ'
-" let g:airline_symbols.paste = '∥'
-" let g:airline_symbols.whitespace = 'Ξ'
-
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-" let g:airline_symbols.linenr = '␊'
-" let g:airline_symbols.linenr = '␤'
-" let g:airline_symbols.branch = '⎇'
