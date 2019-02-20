@@ -28,22 +28,22 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'arielrossanigo/dir-configs-override.vim'
+" Plug 'arielrossanigo/dir-configs-override.vim'
 Plug 'motemen/git-vim'
 Plug 'fisadev/fisa-vim-colorscheme'
-Plug 'rosenfeld/conque-term'
+" Plug 'rosenfeld/conque-term'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'davidhalter/jedi-vim'
 Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-signify'
-Plug 'lilydjwg/colorizer'
+" Plug 'lilydjwg/colorizer'
 Plug 'mileszs/ack.vim'
 Plug 'w0rp/ale'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'chriskempson/base16-vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'plasticboy/vim-markdown'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
@@ -51,11 +51,11 @@ Plug 'szw/vim-tags'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'SirVer/ultisnips'
-Plug 'djmoch/vim-makejob'
+" Plug 'djmoch/vim-makejob'
 Plug 'tpope/vim-commentary'
 Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/xoria256.vim'
+" Plug 'vim-scripts/xoria256.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-dispatch'
 Plug 'Valloric/YouCompleteMe'
@@ -278,6 +278,12 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
 
+
+
+"repeat 
+
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+
 " ALE configuration (Asynchronous Linter Engine)
 
 "let g:ale_sign_warning = '!!'
@@ -307,7 +313,7 @@ map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
  " set laststatus=2 " Always display the statusline in all windows
  " set showtabline=2 " Always display the tabline, even if there is only one tab
  " set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
- " set t_Co=256
+  "set t_Co=256
 
 " Airline 
 
