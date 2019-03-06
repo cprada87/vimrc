@@ -66,6 +66,11 @@ Plug 'fenetikm/falcon'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'powerline/powerline'
 
+" PHP
+Plug 'StanAngeloff/php.vim'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'phpactor/phpactor'
+
 if has('python')
     " YAPF formatter for Python
     Plug 'pignacio/vim-yapf-format'
@@ -136,6 +141,11 @@ endif
 " CtrlP:
 " To search for files with the word "colors" use:
 " <Ctrl+P> colors
+
+" Colorscheme
+
+" :colorscheme base16-summerfruit-dark 
+:colorscheme base16-solarized-dark
 
 " ============================================================================
 set nocompatible
@@ -241,6 +251,18 @@ imap <A-Down> <Esc>:tabn<CR>
 map  <A-Down> :q!<CR>
 " imap <A-Down> <Esc>:q!<CR>
 
+" tab navigation mappings
+map tn :tabn<CR>
+map tp :tabp<CR>
+map tm :tabm 
+map tt :tabnew 
+map ts :tab split<CR>
+map <C-S-Right> :tabn<CR>
+imap <C-S-Right> <ESC>:tabn<CR>
+map <C-S-Left> :tabp<CR>
+imap <C-S-Left> <ESC>:tabp<CR>
+
+
 " Open terminal inside VIM
 map  <F12> :terminal<CR>
 
@@ -318,7 +340,8 @@ map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
 " Airline 
 
 let g:airline_powerline_fonts = 1 
-"let g:airline_theme = 'onedark'
+" let g:airline_theme = 'base16_summerfruit'
+let g:airline_theme = 'base16_solarized'
 let g:airline#extensions#whitespace#enabled = 0
 " Airline & git
 let g:airline#extensions#branch#enabled = 1
