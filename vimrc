@@ -65,7 +65,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'fenetikm/falcon'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'powerline/powerline'
-
+Plug 'metakirby5/codi.vim'
 " PHP
 Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
