@@ -1,5 +1,5 @@
 " VIM Christian Prada:
-" Version: 20180615
+" Version: 20190311
 " Author: Christian Prada <cprada87@gmail.com> - http://github.com/cprada87
 " Main Source: Juanmi Taboada <juanmi@juanmitaboada.com> - http://www.juanmitaboada.com
 
@@ -141,6 +141,22 @@ endif
 " CtrlP:
 " To search for files with the word "colors" use:
 " <Ctrl+P> colors
+
+
+" Codi, add to ~/.basrhc file
+
+"# Usage: codi [filetype] [filename]
+"codi() {
+"  local syntax="${1:-python}"
+"  shift
+"  vim -c \
+"    "let g:startify_disable_at_vimenter = 1 |\
+"    set bt=nofile ls=0 noru nonu nornu |\
+"    hi ColorColumn ctermbg=NONE |\
+"    hi VertSplit ctermbg=NONE |\
+"    hi NonText ctermfg=0 |\
+"    Codi $syntax" "$@"
+"}
 
 " Colorscheme
 
