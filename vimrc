@@ -31,6 +31,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'arielrossanigo/dir-configs-override.vim'
 Plug 'motemen/git-vim'
 Plug 'fisadev/fisa-vim-colorscheme'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 " Plug 'rosenfeld/conque-term'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'davidhalter/jedi-vim'
@@ -162,7 +163,15 @@ endif
 " Colorscheme
 
 " :colorscheme base16-summerfruit-dark 
-:colorscheme base16-solarized-dark
+" :colorscheme base16-solarized-dark
+:colorscheme onehalfdark
+
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 " ============================================================================
 set nocompatible
@@ -358,7 +367,8 @@ map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
 
 let g:airline_powerline_fonts = 1 
 " let g:airline_theme = 'base16_summerfruit'
-let g:airline_theme = 'base16_solarized'
+" let g:airline_theme = 'base16_solarized'
+let g:airline_theme='onehalfdark'
 let g:airline#extensions#whitespace#enabled = 0
 " Airline & git
 let g:airline#extensions#branch#enabled = 1
