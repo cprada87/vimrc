@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'motemen/git-vim'
 Plug 'fisadev/fisa-vim-colorscheme'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'arcticicestudio/nord-vim' , { 'branch': 'develop' }
 " Plug 'rosenfeld/conque-term'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'davidhalter/jedi-vim'
@@ -164,8 +165,8 @@ endif
 
 " :colorscheme base16-summerfruit-dark 
 " :colorscheme base16-solarized-dark
-:colorscheme onehalfdark
-
+" :colorscheme onehalfdark
+:colorscheme nord
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -368,7 +369,8 @@ map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
 let g:airline_powerline_fonts = 1 
 " let g:airline_theme = 'base16_summerfruit'
 " let g:airline_theme = 'base16_solarized'
-let g:airline_theme='onehalfdark'
+" let g:airline_theme='onehalfdark'
+let g:airline_theme='dracula'
 let g:airline#extensions#whitespace#enabled = 0
 " Airline & git
 let g:airline#extensions#branch#enabled = 1
