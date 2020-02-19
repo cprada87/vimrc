@@ -59,7 +59,6 @@ Plug 'tpope/vim-commentary'
 Plug 'leafgarland/typescript-vim'
 Plug 'majutsushi/tagbar'
 " Plug 'vim-scripts/xoria256.vim'
-Plug 'pangloss/vim-javascript'
 Plug 'tpope/vim-dispatch'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
@@ -73,6 +72,18 @@ Plug 'metakirby5/codi.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'phpactor/phpactor'
+Plug 'vim-syntastic/syntastic'
+" Javascript and derivates
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
+Plug 'othree/yajs.vim'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'othree/javascript-libraries-syntax.vim'
+
+" Vim-one theme
+Plug 'rakr/vim-one'
 
 if has('python')
     " YAPF formatter for Python
@@ -166,7 +177,12 @@ endif
 " :colorscheme base16-summerfruit-dark 
 " :colorscheme base16-solarized-dark
 " :colorscheme onehalfdark
-:colorscheme nord
+" :colorscheme nord
+
+" Vim-one theme
+:colorscheme one 
+set background=dark
+let g:one_allow_italics = 1 " I love italic for comments
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -216,6 +232,14 @@ endif
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" let g:syntastic_python_checkers = ['pylint']
+" let g:syntastic_python_checkers
+
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:deoplete#enable_at_startup = 1
@@ -367,10 +391,12 @@ map! <C-x> <Esc>:MakeJob<CR>:copen<CR><C-w><Up>
 " Airline 
 
 let g:airline_powerline_fonts = 1 
+" let g:airline_theme='dracula'
 " let g:airline_theme = 'base16_summerfruit'
 " let g:airline_theme = 'base16_solarized'
 " let g:airline_theme='onehalfdark'
-let g:airline_theme='dracula'
+let g:airline_theme='one'
+
 let g:airline#extensions#whitespace#enabled = 0
 " Airline & git
 let g:airline#extensions#branch#enabled = 1
@@ -387,15 +413,41 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
- let g:airline_symbols.linenr = '␊'
- let g:airline_symbols.linenr = '␤'
- let g:airline_symbols.linenr = '¶'
- let g:airline_symbols.branch = '⎇'
- let g:airline_symbols.paste = 'ρ'
- let g:airline_symbols.paste = 'Þ'
- let g:airline_symbols.paste = '∥'
- let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
+
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
+
+
+" Customizing ALE, EsLint and Prettier⌗
+let g:jsx_ext_required = 0
+
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\}
+
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint'],
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+let g:ale_linters_explicit = 1
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_options = '--no-semi --single-quote --trailing-comma none'
